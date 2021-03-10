@@ -1,0 +1,14 @@
+{
+    "displayName": "IMA-pushpanjali",
+    "appName": "ima-pushpanjali",
+    "description": "IT service managment process",
+    "lastModified": "2021-03-09T05:11:47.376Z",
+    "imgSourcePath": "appIcon-1615263966057.png",
+    "version": "1.0.0",
+    "appType": "classic",
+    "templateName": "blank",
+    "createDate": "2021-03-09T04:03:11.025Z",
+    "analyticsId": "72edbe30-2360-a780-3784-0d573ca1d220",
+    "createdStudioVersion": "7.7.0",
+    "oldAppName": "incidentmanagement-pushpanjali"
+}

@@ -1,0 +1,40 @@
+<div fxLayout="row wrap" style="width:100%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+    <form [formGroup]="loginform">
+      <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+        <h1>
+          Add Incident</h1>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput placeholder="Enter Subject" [required]="false" formControlName="subject">
+          <mat-error align="start" *ngIf="loginform.controls.subject.errors?.required">Please Enter Subject.</mat-error>
+          <mat-error align="start" *ngIf="loginform.controls.subject.errors?.pattern">Please Enter Alphabets.</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput placeholder="Enter Description" [required]="false" formControlName="description">
+          <mat-error align="start" *ngIf="loginform.controls.description.errors?.required">Please enter description</mat-error>
+          <mat-error align="start" *ngIf="loginform.controls.description.errors?.pattern">Please Enter alphabets and numeric.</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput placeholder="Enter Priority" [required]="false" formControlName="priority">
+          <mat-error align="start" *ngIf="loginform.controls.priority.errors?.required">Please enter priority</mat-error>
+          <mat-error align="start" *ngIf="loginform.controls.priority.errors?.pattern">Please Enter numeric Data.</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <mat-form-field [appearance]="&apos;outline&apos;">
+          <input matInput placeholder="Date Picker" [matDatepicker]="picker" formControlName="date" [min]="mindate" [required]="false" [disabled]="false">
+          <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+          <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+          <mat-error align="start" *ngIf="loginform.controls.date.errors?.required">Please Select Date.</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="primary" (click)="onSubmit()">Submit</button></div>
+    </form>
+  </div>
+</div>

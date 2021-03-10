@@ -1,0 +1,14 @@
+{
+    "appPageId": "40fd87c1-d763-7b39-565e-251147960ac6",
+    "appPageName": "addincident",
+    "componentName": "addincidentComponent",
+    "selectorName": "bh-addincident",
+    "htmlFileName": "addincident.template.html",
+    "tsFileName": "addincident.component.ts",
+    "createDate": "2021-03-09T11:14:32.783Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

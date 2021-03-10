@@ -1,0 +1,22 @@
+{
+    "routes": [
+        {
+            "path": "incidentpage",
+            "component": "incidentmainComponent"
+        },
+        {
+            "path": "incidentdetails",
+            "component": "incidentdetailsComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "incidentpage",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}
