@@ -34,24 +34,16 @@ export class incidentmainComponent extends NBaseComponent implements OnInit {
         const dialogRef = this.dialog.open(addincidentComponent, {
             width: '450px',
         });
-
         dialogRef.afterClosed().subscribe(result => {
             console.log('The dialog was closed');
         });
     }
 
     logout() {
-        //this.neutrinosOAuthClientService.logout();
          this.neutrinosOAuthClientService.logout().then(logoutSuccess => {
-            // User logged out
             console.log("You have successfully logged out");
         }).catch(logoutError => {
-            // User logout error
             console.log("There is some problem in logout");
         });
     }
-
-    
-
-    
 }
