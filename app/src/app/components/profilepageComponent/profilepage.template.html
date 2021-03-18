@@ -1,18 +1,25 @@
 <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
   <bh-incidentmain></bh-incidentmain>
-  <mat-card style="width:40%;height:">
+  <mat-card style="height:">
     <mat-card-content>
-      <div fxLayout="column wrap" style="padding-left:20px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-        <h2>
-          User Profile</h2>
-        <div>
-          <p></p>
-          <h4>User </h4>{{username}}
-          <p></p><br>
-        </div>
-        <div>
-          <h4>Role </h4>
-          <p>{{role}}</p>
+      <div fxLayout="row wrap" fxLayoutGap="120px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+        <div fxLayout="column wrap" fxLayoutGap="30px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Icons/profile.jpg" style="margin-left: 86px;" width="200px"></div>
+        <div fxLayout="column wrap" style="padding-left:20px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <h2>
+            User Profile</h2>
+          <div>
+            <h4>User Name </h4>
+            <p>{{name}}</p>
+          </div>
+          <div>
+            <p></p>
+            <h4>User mail</h4>{{username}}
+            <p></p><br>
+          </div>
+          <div>
+            <h4>Role </h4>
+            <p>{{role}}</p>
+          </div>
         </div>
       </div>
     </mat-card-content>

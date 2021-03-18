@@ -21,11 +21,13 @@ export class profilepageComponent extends NBaseComponent implements OnInit {
 userInfo:any;
 username:any;
 role:any;
+name:any;
     constructor(public ser:NeutrinosOAuthClientService) {
         super();
          this.userInfo = this.ser.userInfo;
          console.log("userdetail",this.userInfo);
          this.username=this.userInfo.username;
+         this.name=this.userInfo.firstName;
         if(this.userInfo.teams[4].displayName=="ima-users"){
  this.role="User";
          }
