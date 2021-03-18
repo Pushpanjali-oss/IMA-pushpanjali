@@ -4,6 +4,7 @@
         "mat-input-element",
         "serchInput",
         "incident-table",
-        "mat-sort-header-arrow"
+        "mat-sort-header-arrow",
+        "wlcomeMessage"
     ]
 }

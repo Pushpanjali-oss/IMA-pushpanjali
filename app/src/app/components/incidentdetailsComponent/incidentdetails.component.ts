@@ -9,6 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {deleteincidentComponent} from '../deleteincidentComponent/deleteincident.component';
 import {editincidentComponent} from '../editincidentComponent/editincident.component';
 import { NeutrinosOAuthClientService } from 'neutrinos-oauth-client';
+import { Router } from '@angular/router';
 
 /*
 Client Service import Example:
@@ -46,7 +47,7 @@ export class incidentdetailsComponent extends NBaseComponent implements OnInit {
     @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator
     @ViewChild(MatSort) sort: MatSort;
 
-    constructor(public incidentService: incidentService, public deletedialog: MatDialog,public neutrinosOAuthClientService: NeutrinosOAuthClientService) {
+    constructor(private router: Router, public incidentService: incidentService, public deletedialog: MatDialog,public neutrinosOAuthClientService: NeutrinosOAuthClientService) {
         super();
     }
 
@@ -112,4 +113,22 @@ export class incidentdetailsComponent extends NBaseComponent implements OnInit {
 
         this.teamSearchValue=false;
     }
+
+
+    logout() {
+        //this.neutrinosOAuthClientService.logout();
+         this.neutrinosOAuthClientService.logout().then(logoutSuccess => {
+            // User logged out
+            console.log("You have successfully logged out");
+        }).catch(logoutError => {
+            // User logout error
+            console.log("There is some problem in logout");
+        });
+    }
+
+
+    homeClick = function () {
+        this.router.navigateByUrl('/incidentpage');
+    };
+
 }

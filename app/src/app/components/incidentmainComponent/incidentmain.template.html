@@ -1,10 +1,15 @@
 <mat-toolbar color="accent">Incident Details<div fxLayout="row wrap" fxFlex="1 1 auto;" fxLayoutGap="8px" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><button mat-fab color="primary" (click)="openDialog()">
       <mat-icon>add</mat-icon>
-    </button><button mat-fab color="primary">
-      <mat-icon>home</mat-icon>
+    </button><button mat-fab color="primary" *ngIf="isAdminUser" (click)="listClick()">
+      <mat-icon>list</mat-icon>
     </button><button mat-fab color="primary" (click)="logout()">
       <mat-icon>logout</mat-icon>
-    </button><button mat-fab color="primary" routerLink="/profile">
-      <mat-icon>account_circle</mat-icon>
     </button></div>
 </mat-toolbar>
+<div fxLayout="row wrap" style="width:100%;margin-top:50px;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+  <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+    <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Icons/welcome.jpg"></div>
+    <div class="wlcomeMessage">
+      Hello {{this.loginUser}} , Welcome to IMS.</div>
+  </div>
+</div>

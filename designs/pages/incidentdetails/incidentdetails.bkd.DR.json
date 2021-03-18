@@ -197,7 +197,7 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "",
+                            "_value": "homeClick()",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -258,7 +258,7 @@
                         },
                         {
                             "_key": "(click)",
-                            "_value": "",
+                            "_value": "logout()",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

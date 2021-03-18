@@ -10,8 +10,8 @@ export default {
                 "type": "postgres",
                 "host": "localhost",
                 "port": 5432,
-                "username": "postgres",
-                "password": "root",
+                "username": "pushpa",
+                "password": "12345",
                 "database": "postgres",
                 "schema": "public",
                 "uuidExtension": "",
@@ -108,8 +108,8 @@ export default {
             "postgres_type": "postgres",
             "postgres_host": "localhost",
             "postgres_port": 5432,
-            "postgres_username": "postgres",
-            "postgres_password": "root",
+            "postgres_username": "pushpa",
+            "postgres_password": "12345",
             "postgres_database": "postgres",
             "postgres_schema": "public",
             "postgres_uuidExtension": "",
@@ -418,11 +418,11 @@ export default {
                 },
                 "postgres_username": {
                     "type": "str",
-                    "value": "postgres"
+                    "value": "pushpa"
                 },
                 "postgres_password": {
                     "type": "str",
-                    "value": "root"
+                    "value": "12345"
                 },
                 "postgres_database": {
                     "type": "str",

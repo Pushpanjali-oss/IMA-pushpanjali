@@ -4,6 +4,7 @@ import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { addincidentComponent } from '../addincidentComponent/addincident.component';
 import { NeutrinosOAuthClientService } from 'neutrinos-oauth-client';
+import { Router } from '@angular/router';
 
 /*
 Client Service import Example:
@@ -21,13 +22,28 @@ import { HeroService } from '../../services/hero/hero.service';
 })
 
 export class incidentmainComponent extends NBaseComponent implements OnInit {
-    constructor(public dialog: MatDialog, public neutrinosOAuthClientService: NeutrinosOAuthClientService) {
+    loginUser;
+    isAdminUser:boolean= false;
+    constructor(private router: Router, public dialog: MatDialog, public neutrinosOAuthClientService: NeutrinosOAuthClientService) {
         super();
     }
     closeDialog = true;
     ngOnInit() {
         let userinfoData = this.neutrinosOAuthClientService.userInfo;
+        this.loginUser = this.neutrinosOAuthClientService.userInfo.displayName;
+        this.accessValidation();
         console.log("userinfoData", userinfoData);
+    }
+
+     accessValidation() {
+        if (this.neutrinosOAuthClientService.userInfo.teams.length > 0) {
+            this.neutrinosOAuthClientService.userInfo.teams.forEach(elem => {
+                if (elem.displayName === 'ima-admins') {
+                    this.isAdminUser = true;
+                } else if (elem.displayName === 'ima-users') {
+                }
+            })
+        }
     }
 
     openDialog(): void {
@@ -50,6 +66,13 @@ export class incidentmainComponent extends NBaseComponent implements OnInit {
             console.log("There is some problem in logout");
         });
     }
+
+
+    listClick = function () {
+        this.router.navigateByUrl('/incidentdetails');
+    };
+
+    
 
     
 
