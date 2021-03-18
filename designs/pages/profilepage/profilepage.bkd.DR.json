@@ -103,7 +103,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "width:40%;height:40%",
+                    "_value": "width:40%;height:",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
