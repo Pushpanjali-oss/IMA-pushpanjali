@@ -283,9 +283,10 @@
                     }
                 ]
             },
-            "5abf2fe0-12f5-a393-c18e-78250b36fe7c": {
-                "paletteKey": "NG-MiniFabButton",
+            "284352db-75b6-e2b4-a249-5c8497851904": {
+                "paletteKey": "NG-FabButton",
                 "parentEditorKey": "1f71a321-0fb1-ed36-5262-23d9b0b6dff3",
+                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -308,7 +309,7 @@
                     },
                     {
                         "_key": "color",
-                        "_value": "",
+                        "_value": "primary",
                         "_type": "kv",
                         "_attrDef": "p"
                     },
