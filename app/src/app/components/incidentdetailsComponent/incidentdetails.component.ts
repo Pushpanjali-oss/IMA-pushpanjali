@@ -28,7 +28,8 @@ import { HeroService } from '../../services/hero/hero.service';
 export class incidentdetailsComponent extends NBaseComponent implements OnInit {
     incidentData: any;
     searchValue= "";
-    
+    imagesource:any;
+    teamSearchValue:boolean=true;
     // incidentData = new MatTableDataSource([
     //     {"id": "1", "subject": "Incident 1", "description": "Incident description 1", "priority": 1, "incidentdate": "03-09-21"},
     //     {"id": "2", "subject": "Incident 2", "description": "Incident description 2", "priority": 1, "incidentdate": "03-10-21"},
@@ -54,6 +55,7 @@ export class incidentdetailsComponent extends NBaseComponent implements OnInit {
         this.accessValidation();
        // this.incidentData.paginator = this.paginator;
         //this.getAllIncidentData();
+
     }
 
     filterIncident() {
@@ -101,9 +103,13 @@ export class incidentdetailsComponent extends NBaseComponent implements OnInit {
                     this.getAllIncidentData()
                 } else if (elem.displayName === 'ima-users') {
                     // console.log("Not admin")
-                    this.incd.unauthorized()
+                  // this.incd.unauthorized()
                 }
             })
         }
+    }
+    clearAndRefresh(){
+
+        this.teamSearchValue=false;
     }
 }

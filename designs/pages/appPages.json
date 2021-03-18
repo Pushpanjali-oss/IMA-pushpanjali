@@ -28,5 +28,10 @@
         "appPageName": "loginpage",
         "componentName": "loginpageComponent",
         "createDate": "2021-03-18T06:37:43.083Z"
+    },
+    "a4d25ecb-3c1a-2d1c-e3dd-a3929d1d8c9b": {
+        "appPageName": "profilepage",
+        "componentName": "profilepageComponent",
+        "createDate": "2021-03-18T09:24:38.281Z"
     }
 }
