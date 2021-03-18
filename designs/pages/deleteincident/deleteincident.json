@@ -1,0 +1,14 @@
+{
+    "appPageId": "f757243d-9407-89f3-9564-c69d1d35dfb6",
+    "appPageName": "deleteincident",
+    "componentName": "deleteincidentComponent",
+    "selectorName": "bh-deleteincident",
+    "htmlFileName": "deleteincident.template.html",
+    "tsFileName": "deleteincident.component.ts",
+    "createDate": "2021-03-16T06:32:16.160Z",
+    "bkd": {
+        "designerHtml": "",
+        "designerReference": {},
+        "ts": ""
+    }
+}

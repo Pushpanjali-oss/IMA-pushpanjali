@@ -1,0 +1,648 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "type": "tab",
+        "createdDate": "2021-03-15T04:26:45.630Z",
+        "relativeParentPath": "",
+        "label": "incidentServer",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "incidentServer"
+    },
+    {
+        "id": "sd_4qZ5OTKksXNs1M2g",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "addIncedentApi",
+        "path": "/incidentapi",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/incidentapi": {
+                "post": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 80,
+        "y": 80,
+        "wires": [
+            [
+                "sd_jGcvqsGgCVjId3dL"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidentServer",
+        "functionName": "sd_4qZ5OTKksXNs1M2g"
+    },
+    {
+        "id": "sd_jGcvqsGgCVjId3dL",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "insertquery",
+        "script": "\n//console.log(\"input body data\", bh.input.body);\n bh.input.query = \"INSERT INTO incident (subject, description, priority, incidentdate) values (\" + \"'\" + bh.input.body.subject + \"',\" + \"'\" + bh.input.body.description + \"',\" + bh.input.body.priority + \",\" + \"'\" + bh.input.body.incidentdate + \"')\"\n//bh.input.query = 'INSERT INTO incident (subject, description, priority, incidentdate) values (`{}`)\n\nconsole.log(\"Input data\", bh.input.query );\n",
+        "functionName": "insertquery",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 260,
+        "y": 80,
+        "wires": [
+            [
+                "sd_rietOzUNcG7GXgGh"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "incidentServer"
+    },
+    {
+        "id": "sd_rietOzUNcG7GXgGh",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_OuJFv8EiVhAsk28P",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.input",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {},
+        "dbType": "postgres",
+        "functionName": "sd_rietOzUNcG7GXgGh",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 425,
+        "y": 80,
+        "wires": [
+            [
+                "sd_dzXuMboftct5xktG"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "incidentServer"
+    },
+    {
+        "id": "sd_dzXuMboftct5xktG",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "addincidentres",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "cookies": [],
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "addincidentres",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 600,
+        "y": 80,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_EcZxsbvTfzPLrZw0",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "getIncidentApi",
+        "path": "/getincidentapi",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "get",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/getincidentapi": {
+                "get": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 80,
+        "y": 200,
+        "wires": [
+            [
+                "sd_TduBMTjhBBAs4FAM"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidentServer",
+        "functionName": "sd_EcZxsbvTfzPLrZw0"
+    },
+    {
+        "id": "sd_TduBMTjhBBAs4FAM",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "getIncidentquery",
+        "script": "bh.input.query = \"SELECT * FROM  incident ORDER BY incident_id DESC\" ;\nconsole.log(\"get query\", bh.input.query);",
+        "functionName": "getIncidentquery",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 265,
+        "y": 200,
+        "wires": [
+            [
+                "sd_Xx5sCITxyPjM5VWJ"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_Xx5sCITxyPjM5VWJ",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_OuJFv8EiVhAsk28P",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.input",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_Xx5sCITxyPjM5VWJ",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 425,
+        "y": 200,
+        "wires": [
+            [
+                "sd_HXti5EtgJj6MQ93A"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_HXti5EtgJj6MQ93A",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "getincidentres",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "getincidentres",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 605,
+        "y": 200,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_jw9htBsqsybWNEZX",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "updateIncedentApi",
+        "path": "/updateincidentapi",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "put",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/updateincidentapi": {
+                "put": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 85,
+        "y": 320,
+        "wires": [
+            [
+                "sd_J2qrsggV55kLsF3v"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidentServer",
+        "functionName": "sd_jw9htBsqsybWNEZX"
+    },
+    {
+        "id": "sd_J2qrsggV55kLsF3v",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "updatequeryincident",
+        "script": "\nbh.input.query = \"UPDATE incident SET subject = '\"+ bh.input.body.subject +\"', description = '\"+ bh.input.body.description +\"', priority = \"+ bh.input.body.priority +\", incidentdate = '\"+ bh.input.body.incidentdate +\"' WHERE (incident_id = \" + bh.input.body.id+ \")\"\n\nconsole.log(\"Input data\", bh.input.query );\n",
+        "functionName": "updatequeryincident",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 265,
+        "y": 320,
+        "wires": [
+            [
+                "sd_8HLpghUajArsFerT"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_8HLpghUajArsFerT",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_OuJFv8EiVhAsk28P",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.input",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "dbType": "postgres",
+        "functionName": "sd_8HLpghUajArsFerT",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 425,
+        "y": 320,
+        "wires": [
+            [
+                "sd_DBRvOdFDcEj1FCOG"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_DBRvOdFDcEj1FCOG",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "updateincidentres",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "updateincidentres",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 605,
+        "y": 320,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_UwzgN9qdBc9CJgdP",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "deleteincidentquery",
+        "script": "bh.input.query = 'DELETE FROM incident  WHERE incident_id = ' + bh.input.body.id",
+        "functionName": "deleteincidentquery",
+        "category": "Function",
+        "__n_excludedFromValidation__": {},
+        "x": 265,
+        "y": 440,
+        "wires": [
+            [
+                "sd_ZHhatl38RHDHe7ql"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_ZEoiOWfw7Ss5Gekv",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "deleteIncidentApi",
+        "path": "/deleteapi",
+        "uploadpath": "",
+        "summary": "",
+        "description": "",
+        "method": "delete",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": false,
+        "httpOptions": {
+            "/deleteapi": {
+                "delete": {
+                    "summary": "",
+                    "description": "",
+                    "consumes": [],
+                    "produces": [],
+                    "parameters": [],
+                    "responses": {}
+                }
+            }
+        },
+        "editableListData": {
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "category": "HTTP",
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 85,
+        "y": 440,
+        "wires": [
+            [
+                "sd_UwzgN9qdBc9CJgdP"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidentServer",
+        "functionName": "sd_ZEoiOWfw7Ss5Gekv"
+    },
+    {
+        "id": "sd_ZHhatl38RHDHe7ql",
+        "type": "ExecuteSql",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "databaseConfig": "sd_OuJFv8EiVhAsk28P",
+        "queryType": "",
+        "resultMap": {
+            "type": "bh.local",
+            "value": "result"
+        },
+        "multipleQuery": "",
+        "singleQuery": {
+            "type": "bh.input",
+            "value": "query"
+        },
+        "inputs": 1,
+        "outputs": 1,
+        "params": [],
+        "paramMappingObj": {},
+        "dbType": "postgres",
+        "functionName": "sd_ZHhatl38RHDHe7ql",
+        "category": "Storage",
+        "__n_excludedFromValidation__": {},
+        "x": 425,
+        "y": 440,
+        "wires": [
+            [
+                "sd_2HajHxs7FwLbxNYB"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_2HajHxs7FwLbxNYB",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_Wv6LA31xQodKXFI9",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "deleteincident",
+        "headers": {},
+        "responseBody": {
+            "type": "bh.local",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.local.result",
+            "send": "bh.local.result"
+        },
+        "inputs": 1,
+        "outputs": 0,
+        "editableListData": {
+            "headers": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "deleteincident",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 605,
+        "y": 440,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    }
+]

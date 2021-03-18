@@ -1,7 +1,6 @@
 {
     "2d6d743d-7347-2d85-c74d-de91f5d35bbf": {
         "paletteKey": "NG-Toolbar",
-        "isCommented": "false",
         "designerReference": [
             {
                 "_key": "componentLabel",
@@ -104,7 +103,6 @@
             "a769742e-ef8e-1647-9860-6587b67decc2": {
                 "paletteKey": "NG-FabButton",
                 "parentEditorKey": "1f71a321-0fb1-ed36-5262-23d9b0b6dff3",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -166,7 +164,6 @@
             "31679eb9-c90f-329b-0684-cf7203973a01": {
                 "paletteKey": "NG-FabButton",
                 "parentEditorKey": "1f71a321-0fb1-ed36-5262-23d9b0b6dff3",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -228,7 +225,6 @@
             "a3484419-ea2d-63f6-1680-a38d2ff2dca8": {
                 "paletteKey": "NG-FabButton",
                 "parentEditorKey": "1f71a321-0fb1-ed36-5262-23d9b0b6dff3",
-                "isCommented": "false",
                 "designerReference": [
                     {
                         "_key": "style",
@@ -257,7 +253,7 @@
                     },
                     {
                         "_key": "(click)",
-                        "_value": "",
+                        "_value": "logout()",
                         "_type": "kv",
                         "_attrDef": "p"
                     },

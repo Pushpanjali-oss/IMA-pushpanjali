@@ -1,0 +1,646 @@
+[
+    {
+        "id": "sd_pz4AApQ3GRfsWJ4b",
+        "type": "tab",
+        "createdDate": "2021-03-11T09:31:17.654Z",
+        "relativeParentPath": "",
+        "label": "incidentService",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "incidentService"
+    },
+    {
+        "id": "sd_jo2Xxq827pbzkP8H",
+        "type": "Start",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "addInstant",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "subject",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "description",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "priority",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "date",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "addInstant",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 140,
+        "y": 80,
+        "wires": [
+            [
+                "sd_4kWErT3qi52gjoeR"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidentService"
+    },
+    {
+        "id": "sd_4kWErT3qi52gjoeR",
+        "type": "CallSSDApi",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlValue": "/incidentapi",
+        "url": "/incidentapi",
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_4kWErT3qi52gjoeR",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 285,
+        "y": 80,
+        "wires": [
+            [
+                "sd_wt955SSA5o8bUCvY"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "incidentService"
+    },
+    {
+        "id": "sd_wt955SSA5o8bUCvY",
+        "type": "SnackBar",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "addSuccessfull",
+        "message": {
+            "type": "str",
+            "value": "incident added successfully"
+        },
+        "action": {
+            "type": "str",
+            "value": "Close"
+        },
+        "duration": {
+            "type": "num",
+            "value": "4000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "addSuccessfull",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 445,
+        "y": 80,
+        "wires": [
+            [
+                "sd_nbQjahDLuRSBiav5"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "incidentService"
+    },
+    {
+        "id": "sd_nbQjahDLuRSBiav5",
+        "type": "Navigation",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "navigateToList",
+        "path": "/incidentpage",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "navigateToList",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 625,
+        "y": 80,
+        "wires": [
+            [
+                "sd_1Kyfesst5jcmprfR"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_1Kyfesst5jcmprfR",
+        "type": "Log",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "addLog",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "functionName": "addLog",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 785,
+        "y": 80,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_KECqkfn446UNAkc7",
+        "type": "Start",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getInstant",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "result",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getInstant",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "sd_d1yePXmuY9GMuh7c"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidentService"
+    },
+    {
+        "id": "sd_d1yePXmuY9GMuh7c",
+        "type": "CallSSDApi",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlValue": "/getincidentapi",
+        "url": "/getincidentapi",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": ""
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_d1yePXmuY9GMuh7c",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 285,
+        "y": 200,
+        "wires": [
+            [
+                "sd_6cw3vzNtRZTKCv3L"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_6cw3vzNtRZTKCv3L",
+        "type": "SnackBar",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "getSuccessfull",
+        "message": {
+            "type": "str",
+            "value": "Getting all incident  successfully"
+        },
+        "action": {
+            "type": "str",
+            "value": "Close"
+        },
+        "duration": {
+            "type": "num",
+            "value": "4000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "getSuccessfull",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 445,
+        "y": 200,
+        "wires": [
+            [
+                "sd_kAwHcUsfPFWC7u22"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_kAwHcUsfPFWC7u22",
+        "type": "Log",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "getLog",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "functionName": "getLog",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 625,
+        "y": 200,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_bUoMF9Ze4diALPLQ",
+        "type": "Start",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "updateInstant",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "incidentData",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "updateInstant",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 145,
+        "y": 320,
+        "wires": [
+            [
+                "sd_a7nU1zbrlMOvhueI"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidentService"
+    },
+    {
+        "id": "sd_ZvHDKLmhc73GKmXG",
+        "type": "SnackBar",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "updateSuccessfull",
+        "message": {
+            "type": "str",
+            "value": "incident updated successfully"
+        },
+        "action": {
+            "type": "str",
+            "value": "Close"
+        },
+        "duration": {
+            "type": "num",
+            "value": "4000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "updateSuccessfull",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 445,
+        "y": 320,
+        "wires": [
+            [
+                "sd_yLDgdZvwNIji9GlQ"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_yLDgdZvwNIji9GlQ",
+        "type": "Log",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "updateLog",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "functionName": "updateLog",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 625,
+        "y": 320,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_LRfDH4W29u3E78y1",
+        "type": "Start",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "deleteInstant",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "id",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "deleteInstant",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 145,
+        "y": 440,
+        "wires": [
+            [
+                "sd_JidPEioG5E1p5U0S"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "incidentService"
+    },
+    {
+        "id": "sd_JidPEioG5E1p5U0S",
+        "type": "CallSSDApi",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "delete",
+        "methodMapping": "",
+        "methodMappingObj": {},
+        "urlValue": "/deleteapi",
+        "url": "/deleteapi",
+        "ret": "json",
+        "retMapping": "",
+        "retMappingObj": {},
+        "reqBody": "bh.input.id",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "id"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMapping": "",
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMapping": "",
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_JidPEioG5E1p5U0S",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 285,
+        "y": 440,
+        "wires": [
+            [
+                "sd_2R03kuf7gL2hr6oA"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_2R03kuf7gL2hr6oA",
+        "type": "SnackBar",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "deleteSuccessfull",
+        "message": {
+            "type": "str",
+            "value": "incident deleted successfully"
+        },
+        "action": {
+            "type": "str",
+            "value": "Close"
+        },
+        "duration": {
+            "type": "num",
+            "value": "4000"
+        },
+        "horizontalPosition": "center",
+        "horizontalPositionMap": "",
+        "verticalPosition": "bottom",
+        "verticalPositionMap": "",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "deleteSuccessfull",
+        "category": "General",
+        "__n_excludedFromValidation__": {},
+        "x": 445,
+        "y": 440,
+        "wires": [
+            [
+                "sd_9SUPkCGoS1kC2noX"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_9SUPkCGoS1kC2noX",
+        "type": "Log",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "deleteLog",
+        "outputs": 0,
+        "logObject": "bh.local.result",
+        "functionName": "deleteLog",
+        "category": "General",
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "bh.local",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "x": 625,
+        "y": 440,
+        "wires": [],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_a7nU1zbrlMOvhueI",
+        "type": "CallSSDApi",
+        "z": "sd_pz4AApQ3GRfsWJ4b",
+        "viewType": "client",
+        "nodeType": "flow",
+        "name": "",
+        "method": "put",
+        "methodMappingObj": {},
+        "urlValue": "/updateincidentapi",
+        "url": "/updateincidentapi",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.incidentData",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "incidentData"
+        },
+        "resultMapping": "bh.local.result",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_a7nU1zbrlMOvhueI",
+        "category": "HTTP",
+        "__n_excludedFromValidation__": {},
+        "x": 285,
+        "y": 320,
+        "wires": [
+            [
+                "sd_ZvHDKLmhc73GKmXG"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    }
+]

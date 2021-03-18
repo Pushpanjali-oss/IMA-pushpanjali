@@ -1,0 +1,553 @@
+[
+    {
+        "id": "sd_sOxsrtEFnbJKXNak",
+        "type": "tab",
+        "createdDate": "2019-12-04T13:37:05.418Z",
+        "label": "idsutil",
+        "disabled": false,
+        "info": "",
+        "generateNext": true,
+        "serviceName": "idsutil",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_fhWjbV8LTlOxWdET",
+        "type": "Start",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "getIDSClientInstance",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [
+            {
+                "key": "clientInstance",
+                "defaultValue": {
+                    "type": "null",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "functionName": "getIDSClientInstance",
+        "x": 241,
+        "y": 252.78125,
+        "wires": [
+            [
+                "sd_8WxijQyebJJj9nrQ"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "idsutil"
+    },
+    {
+        "id": "sd_Ouh2jf3uOboLsS1T",
+        "type": "Script",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nconst DEFAULT_HTTP_OPTIONS = {\n    timeout: 60000,\n};\n\ncustom.setHttpOptionsDefaults({\n    timeout: DEFAULT_HTTP_OPTIONS.timeout,\n});\nlog.info(`Identity server default HTTP options : ${DEFAULT_HTTP_OPTIONS}`);\nconst issuer = await Issuer.discover(settings.default['ids']['issuerURL']);\nlog.info(`Identity server discovered at : ${issuer.issuer}`);\nconst client = await new issuer.Client({\n    client_id: settings.default['ids']['client_id'],\n    client_secret: settings.default['ids']['client_secret']\n});\nclient[custom.clock_tolerance] = process.env.CLOCK_TOLERANCE;\nlog.info('Client connected...');\nbh.input.clientInstance = client;",
+        "x": 742.890625,
+        "y": 144.78125,
+        "wires": [
+            [
+                "sd_6cJ1G5bZScmTGxbp"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "idsutil",
+        "functionName": "sd_Ouh2jf3uOboLsS1T"
+    },
+    {
+        "id": "sd_6cJ1G5bZScmTGxbp",
+        "type": "ServiceVariables",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "client",
+                "typedIpValue": {
+                    "type": "bh.input",
+                    "value": "clientInstance"
+                }
+            }
+        ],
+        "functionName": "sd_6cJ1G5bZScmTGxbp",
+        "x": 926,
+        "y": 144.75,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "idsutil"
+    },
+    {
+        "id": "sd_tOgXnJy492nsXbuC",
+        "type": "Switch",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Check if client exists",
+        "property": "client",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.client",
+        "rules": [
+            {
+                "t": "istype",
+                "v": "\"undefined\"",
+                "vt": "\"undefined\"",
+                "gv": "\"undefined\""
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 566,
+        "y": 252.765625,
+        "wires": [
+            [
+                "sd_Ouh2jf3uOboLsS1T"
+            ],
+            [
+                "sd_09n3AjfgFqwZT3Le"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_tOgXnJy492nsXbuC"
+    },
+    {
+        "id": "sd_8WxijQyebJJj9nrQ",
+        "type": "ServiceVariables",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Get client instance ",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "client",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "client"
+                }
+            }
+        ],
+        "functionName": "sd_8WxijQyebJJj9nrQ",
+        "x": 404,
+        "y": 253.75,
+        "wires": [
+            [
+                "sd_tOgXnJy492nsXbuC"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_09n3AjfgFqwZT3Le",
+        "type": "ServiceVariables",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Get client if exists",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "client",
+                "typedIpValue": {
+                    "type": "bh.input",
+                    "value": "clientInstance"
+                }
+            }
+        ],
+        "functionName": "sd_09n3AjfgFqwZT3Le",
+        "x": 755,
+        "y": 378.75,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_1EUgjUsdh6mcmN0I",
+        "type": "Start",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "Get Authorization Params",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [
+            {
+                "key": "authParams",
+                "defaultValue": {
+                    "type": "null",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "functionName": "getAuthorizationParams",
+        "x": 244,
+        "y": 562.8125,
+        "wires": [
+            [
+                "sd_5nP8BMxm16YZNipi"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "idsutil"
+    },
+    {
+        "id": "sd_5nP8BMxm16YZNipi",
+        "type": "Script",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Auth Params (Scope and consent)",
+        "script": "bh.input.authParams = {\n    scope: 'openid profile email address phone offline_access user',\n    prompt: 'consent',\n};",
+        "x": 434,
+        "y": 562.8125,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_5nP8BMxm16YZNipi"
+    },
+    {
+        "id": "sd_Bqz5LTMq5SxVkaca",
+        "type": "Start",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "handleTokenExpiry",
+        "outputs": 1,
+        "noerr": 0,
+        "inputVariables": [
+            {
+                "key": "existingSession",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": false
+            },
+            {
+                "key": "newSession",
+                "defaultValue": {
+                    "type": "str",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "functionName": "handleTokenExpiry",
+        "x": 179.25000953674316,
+        "y": 950.0312614440918,
+        "wires": [
+            [
+                "sd_MTqn2I2fVqcUpXgT"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "idsutil"
+    },
+    {
+        "id": "sd_MTqn2I2fVqcUpXgT",
+        "type": "Script",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "const tokenset = bh.input.existingSession.data.tokenset;\nbh.local.expires_at = tokenset['expires_at'] * 1000;\nbh.local.refreshTime = (((new Date()).valueOf()) + 300000); // 5min before",
+        "x": 349.14063453674316,
+        "y": 948.0312614440918,
+        "wires": [
+            [
+                "sd_6RjbQlGgC6CjPisM"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_MTqn2I2fVqcUpXgT"
+    },
+    {
+        "id": "sd_6RjbQlGgC6CjPisM",
+        "type": "Switch",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Is Access token valid",
+        "property": "expires_at",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.expires_at",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "refreshTime",
+                "vt": "bh.local",
+                "gv": "bh.local.refreshTime"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 503.25000953674316,
+        "y": 949.0312614440918,
+        "wires": [
+            [
+                "sd_SXLdz7MXPOwvjWwL"
+            ],
+            [
+                "sd_DzwCc54IUtVutQbC"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_6RjbQlGgC6CjPisM"
+    },
+    {
+        "id": "sd_SXLdz7MXPOwvjWwL",
+        "type": "Script",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.newSession = bh.input.existingSession.data;",
+        "x": 723.2500095367432,
+        "y": 839.0312614440918,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_SXLdz7MXPOwvjWwL"
+    },
+    {
+        "id": "sd_DzwCc54IUtVutQbC",
+        "type": "CallService",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "noerr": 0,
+        "service": {
+            "serviceId": "sd_sOxsrtEFnbJKXNak",
+            "serviceName": "idsutil",
+            "id": "sd_sOxsrtEFnbJKXNak",
+            "label": "idsutil"
+        },
+        "flow": {
+            "flowId": "sd_fhWjbV8LTlOxWdET",
+            "flowName": "getIDSClientInstance"
+        },
+        "inputVariables": [
+            {
+                "key": "clientInstance",
+                "map": true,
+                "valueType": "bh.input",
+                "value": ""
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "clientInstance",
+                "valueType": "bh.input",
+                "value": "client",
+                "mapVarName": "clientInstance",
+                "localVar": "bh.input.client"
+            }
+        ],
+        "callService": "./idsutil",
+        "startName": "getIDSClientInstance",
+        "inputParams": [
+            null
+        ],
+        "x": 717.2500095367432,
+        "y": 1044.0312614440918,
+        "wires": [
+            [
+                "sd_vdzsyBnzpeBi4mRK"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_DzwCc54IUtVutQbC"
+    },
+    {
+        "id": "sd_vdzsyBnzpeBi4mRK",
+        "type": "Script",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Get new Tokenset with refresh token",
+        "script": "bh.local.refresh_token = await bh.input.client.introspect(bh.input.existingSession.data.tokenset.refresh_token, 'refresh_token');",
+        "x": 888.2500095367432,
+        "y": 1041.0312614440918,
+        "wires": [
+            [
+                "sd_HQp7CgQZEESxE3Qe"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_vdzsyBnzpeBi4mRK"
+    },
+    {
+        "id": "sd_UKXe822fztYsvPFm",
+        "type": "Catch",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": [
+            "handleTokenExpiry"
+        ],
+        "selectCatchType": "selectednodes",
+        "masternodeList": "",
+        "x": 852.1406345367432,
+        "y": 1191.0312614440918,
+        "wires": [
+            [
+                "sd_5OLdNlfZ05Ul4bQB"
+            ]
+        ],
+        "generateNext": true,
+        "serviceName": "idsutil",
+        "functionName": "sd_UKXe822fztYsvPFm"
+    },
+    {
+        "id": "sd_HQp7CgQZEESxE3Qe",
+        "type": "Switch",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Is refresh token active",
+        "property": "refresh_token.active",
+        "propertyType": "bh.local",
+        "propertyGv": "bh.local.refresh_token.active",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "x": 1081.2500095367432,
+        "y": 1032.0312614440918,
+        "wires": [
+            [
+                "sd_DW9NXFNW7LnQprnm"
+            ],
+            [
+                "sd_5OLdNlfZ05Ul4bQB"
+            ]
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_HQp7CgQZEESxE3Qe"
+    },
+    {
+        "id": "sd_DW9NXFNW7LnQprnm",
+        "type": "Script",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Rotate tokenset",
+        "script": "bh.input.newSession = { rotated: true };\nbh.input.newSession['tokenset'] = await bh.input.client.refresh(bh.input.existingSession.data.tokenset.refresh_token);\nbh.input.newSession['userInfo'] = await bh.input.client.userinfo(bh.input.newSession['tokenset']['access_token']);\nbh.input.newSession['tokenset']['claims'] = Object.assign({}, bh.input.newSession['tokenset'].claims());",
+        "x": 1277.2500095367432,
+        "y": 911.0312614440918,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_DW9NXFNW7LnQprnm"
+    },
+    {
+        "id": "sd_5OLdNlfZ05Ul4bQB",
+        "type": "Script",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.newSession = false;",
+        "x": 1434.2500095367432,
+        "y": 1182.0312614440918,
+        "wires": [
+            []
+        ],
+        "generateNext": false,
+        "generated": true,
+        "functionName": "sd_5OLdNlfZ05Ul4bQB"
+    },
+    {
+        "id": "sd_NtmukXKa0oJF0fqK",
+        "type": "Comments",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Get IDS client instance",
+        "comments": "<p>Returns IDS client instance to perform IDS authentication</p>",
+        "x": 553.890625,
+        "y": 75.75,
+        "wires": [],
+        "generateNext": true
+    },
+    {
+        "id": "sd_RzEgF2XP8uZvuAiY",
+        "type": "Comments",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Get Authorization Scopes",
+        "comments": "",
+        "x": 339.86328506469727,
+        "y": 462.1875066757202,
+        "wires": [],
+        "generateNext": true
+    },
+    {
+        "id": "sd_W7XMlwXNTmxQ1ejU",
+        "type": "Comments",
+        "z": "sd_sOxsrtEFnbJKXNak",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "Handle Token expiry",
+        "comments": "<p>If the access token is expired, this flow gets new tokens and updates the session.</p>",
+        "x": 349.86328887939453,
+        "y": 815.9375114440918,
+        "wires": [],
+        "generateNext": true
+    }
+]

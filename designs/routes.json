@@ -2,11 +2,17 @@
     "routes": [
         {
             "path": "incidentpage",
-            "component": "incidentmainComponent"
+            "component": "incidentmainComponent",
+            "canActivate": "NeutrinosAuthGuardService"
         },
         {
             "path": "incidentdetails",
-            "component": "incidentdetailsComponent"
+            "component": "incidentdetailsComponent",
+            "canActivate": "NeutrinosAuthGuardService"
+        },
+        {
+            "path": "loginpage",
+            "component": "loginpageComponent"
         },
         {
             "path": "''",

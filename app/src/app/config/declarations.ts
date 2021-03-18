@@ -15,6 +15,12 @@ window['neutrinos'] = {
 }
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-loginpageComponent
+import { loginpageComponent } from '../components/loginpageComponent/loginpage.component';
+//CORE_REFERENCE_IMPORT-editincidentComponent
+import { editincidentComponent } from '../components/editincidentComponent/editincident.component';
+//CORE_REFERENCE_IMPORT-deleteincidentComponent
+import { deleteincidentComponent } from '../components/deleteincidentComponent/deleteincident.component';
 //CORE_REFERENCE_IMPORT-incidentdetailsComponent
 import { incidentdetailsComponent } from '../components/incidentdetailsComponent/incidentdetails.component';
 //CORE_REFERENCE_IMPORT-addincidentComponent
@@ -48,6 +54,12 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginpageComponent
+loginpageComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-editincidentComponent
+editincidentComponent,
+//CORE_REFERENCE_PUSH_TO_DEC_ARRAY-deleteincidentComponent
+deleteincidentComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-incidentdetailsComponent
 incidentdetailsComponent,
 //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-addincidentComponent
@@ -80,5 +92,5 @@ export const appProviders = [
 */
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
-export const appRoutes = [{path: 'incidentpage', component: incidentmainComponent},{path: 'incidentdetails', component: incidentdetailsComponent},{path: '', redirectTo: 'incidentpage', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
+export const appRoutes = [{path: 'incidentpage', component: incidentmainComponent, canActivate: [NeutrinosAuthGuardService]},{path: 'incidentdetails', component: incidentdetailsComponent, canActivate: [NeutrinosAuthGuardService]},{path: 'loginpage', component: loginpageComponent},{path: '', redirectTo: 'incidentpage', pathMatch: 'full'},{path: '**', component: PageNotFoundComponent}]
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

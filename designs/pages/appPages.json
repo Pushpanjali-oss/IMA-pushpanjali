@@ -13,5 +13,20 @@
         "appPageName": "incidentdetails",
         "componentName": "incidentdetailsComponent",
         "createDate": "2021-03-10T00:51:52.671Z"
+    },
+    "f757243d-9407-89f3-9564-c69d1d35dfb6": {
+        "appPageName": "deleteincident",
+        "componentName": "deleteincidentComponent",
+        "createDate": "2021-03-16T06:32:16.160Z"
+    },
+    "6895c214-32d6-892c-6d15-5f2e50e88cd9": {
+        "appPageName": "editincident",
+        "componentName": "editincidentComponent",
+        "createDate": "2021-03-16T06:59:17.358Z"
+    },
+    "8e46913b-02b9-d008-48d8-1b08246f80ac": {
+        "appPageName": "loginpage",
+        "componentName": "loginpageComponent",
+        "createDate": "2021-03-18T06:37:43.083Z"
     }
 }

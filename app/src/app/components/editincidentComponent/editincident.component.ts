@@ -1,9 +1,10 @@
 /*DEFAULT GENERATED TEMPLATE. DO NOT CHANGE SELECTOR TEMPLATE_URL AND CLASS NAME*/
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Inject } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { FormBuilder,Validators } from '@angular/forms';
 import { incidentService } from '../../sd-services/incidentService';
+import * as moment from 'moment';
 
 /*
 Client Service import Example:
@@ -16,16 +17,17 @@ import { HeroService } from '../../services/hero/hero.service';
 */
 
 @Component({
-    selector: 'bh-addincident',
-    templateUrl: './addincident.template.html'
+    selector: 'bh-editincident',
+    templateUrl: './editincident.template.html'
 })
 
-export class addincidentComponent extends NBaseComponent implements OnInit {
-    loginform;
+export class editincidentComponent extends NBaseComponent implements OnInit {
+loginform;
     mindate = new Date;
-
-    constructor(public fb: FormBuilder, public dialogRef: MatDialogRef<addincidentComponent>, public incidentService: incidentService) {
+    editData: any;
+    constructor(public fb: FormBuilder, public dialogRef: MatDialogRef<editincidentComponent>, public incidentService: incidentService, @Inject(MAT_DIALOG_DATA) data) {
         super();
+        this.editData = data;
     }
 
     ngOnInit() {
@@ -42,22 +44,25 @@ export class addincidentComponent extends NBaseComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  validateAllFields() {
+   validateAllFields() {
         Object.keys(this.loginform.controls).forEach(field => {
             const control = this.loginform.get(field)
             control.markAsTouched({onlySlef: true})
         })
     }
   onSubmit() {
-        console.log("result", this.loginform.value);
-        this.validateAllFields()
+        console.log("result", this.loginform.value, this.loginform.value.priority);
+        this.validateAllFields();
         if(this.loginform.valid) {
-            let userData = this.loginform.value;
+            let incidentData = {
+                id: this.editData.incident_id,
+                subject : this.loginform.value.subject,
+                description : this.loginform.value.description,
+                priority : Number(this.loginform.value.priority),
+                incidentdate : moment(this.loginform.value.incidentdate).format('MMMM Do YYYY')
+            }
+            this.incidentService.updateInstant(incidentData);
             this.onNoClick();
-            console.log("Data", userData.subject, userData.description, userData.priority, userData.date);
-            this.incidentService.addInstant(userData.subject, userData.description, userData.priority, userData.date);
-        } else {
-            console.log("Invalid form data");
-        }
     }
+}
 }

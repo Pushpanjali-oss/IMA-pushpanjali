@@ -3,3 +3,28 @@
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
 
+.searchBar {
+    border: 1px solid;
+    margin: 31px 0 31px;
+    width: 27rem;
+    height: 35px;
+    border-radius: 19px;
+}
+input.mat-input-element.serchInput {
+    padding: 10px 0 0 16px;
+}
+.incident-table table thead {
+    background-color: black;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.incident-table table thead th{
+    color: white !important;
+    font-weight:bold !important;
+    font-size: 16px;
+}
+.mat-sort-header-arrow {
+    color: white !important;
+}
+

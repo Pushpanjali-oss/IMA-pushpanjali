@@ -1,3 +1,9 @@
 {
-    "classes": []
+    "classes": [
+        "searchBar",
+        "mat-input-element",
+        "serchInput",
+        "incident-table",
+        "mat-sort-header-arrow"
+    ]
 }

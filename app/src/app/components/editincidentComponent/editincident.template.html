@@ -3,7 +3,7 @@
     <form [formGroup]="loginform">
       <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
         <h1>
-          Add Incident</h1>
+          Update Incident</h1>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
@@ -34,7 +34,7 @@
           <mat-error align="start" *ngIf="loginform.controls.date.errors?.required">Please Select Date.</mat-error>
         </mat-form-field>
       </div>
-      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="accent" (click)="onSubmit()">Submit</button></div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><button mat-raised-button color="primary" (click)="onSubmit()">Submit</button></div>
     </form>
   </div>
 </div>

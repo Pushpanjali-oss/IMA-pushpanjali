@@ -61,6 +61,7 @@
         "neutrinos-mongodb-session-store": "0.0.1",
         "nodemailer": "6.4.17",
         "openid-client": "3.4.0",
+        "pg": "7.17.1",
         "poplib": "0.1.7",
         "request": "2.88.0",
         "strong-soap": "1.22.1",

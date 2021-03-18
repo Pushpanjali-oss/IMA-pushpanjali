@@ -1,40 +1,67 @@
-<div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true" [fxHide]="false">
-  <mat-card style="width:100%">
-    <mat-card-content align="left">
-      <div fxLayout="column">
-        <table mat-table [dataSource]="incidentData" class="table-width-fix">
-          <tr mat-header-row *matHeaderRowDef="[&apos;id&apos;,&apos;subject&apos;,&apos;description&apos;,&apos;priority&apos;,&apos;incidentdate&apos;]"></tr>
-          <tr mat-row *matRowDef="let row; columns: [&apos;id&apos;,&apos;subject&apos;,&apos;description&apos;,&apos;priority&apos;,&apos;incidentdate&apos;];"></tr>
-
-          <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>Incident ID</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.id}}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="subject">
-            <th mat-header-cell *matHeaderCellDef>Incident Subject</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.subject}}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef>Incident Description</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.description}}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="priority">
-            <th mat-header-cell *matHeaderCellDef>Incident Priority</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.priority}}</td>
-          </ng-container>
-
-          <ng-container matColumnDef="incidentdate">
-            <th mat-header-cell *matHeaderCellDef>Incident Time</th>
-            <td mat-cell *matCellDef="let table; let i = index;">{{table.incidentdate}}</td>
-          </ng-container>
-        </table>
-        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
-        </mat-paginator>
-
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+  <mat-toolbar color="accent">Incident Details<div fxLayout="row wrap" fxFlex="1 1 auto;" fxLayoutGap="8px" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><button mat-fab color="primary">
+        <mat-icon>home</mat-icon>
+      </button><button mat-fab color="primary">
+        <mat-icon>logout</mat-icon>
+      </button></div>
+  </mat-toolbar>
+  <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+    <div>
+      <div class="searchBar">
+        <input matInput class="serchInput" placeholder="Search" [(ngModel)]="searchValue" (keyup)="filterIncident()">
       </div>
-    </mat-card-content>
-  </mat-card>
+
+
+    </div>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+    <mat-card style="width:95%;box-shadow: 3px 3px 5px 6px #ccc;">
+      <mat-card-content align="left">
+        <div fxLayout="column" class="incident-table" style=" ">
+          <table mat-table [dataSource]="incidentData" matSort class="table-width-fix">
+            <tr mat-header-row *matHeaderRowDef="[&apos;index&apos;,&apos;subject&apos;,&apos;description&apos;,&apos;priority&apos;,&apos;incidentdate&apos;,&apos;a854663c-84dd-7d5e-1e70-bf4f4efcb919&apos;]"></tr>
+            <tr mat-row *matRowDef="let row; columns: [&apos;index&apos;,&apos;subject&apos;,&apos;description&apos;,&apos;priority&apos;,&apos;incidentdate&apos;,&apos;a854663c-84dd-7d5e-1e70-bf4f4efcb919&apos;];"></tr>
+
+            <ng-container matColumnDef="index">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Incident ID</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{i+1}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="subject">
+              <th mat-header-cell *matHeaderCellDef>Incident Subject</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.subject}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="description">
+              <th mat-header-cell *matHeaderCellDef>Incident Description</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.description}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="priority">
+              <th mat-header-cell *matHeaderCellDef>Incident Priority</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.priority}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="incidentdate">
+              <th mat-header-cell *matHeaderCellDef>Incident Time</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.incidentdate}}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="a854663c-84dd-7d5e-1e70-bf4f4efcb919">
+              <th mat-header-cell *matHeaderCellDef>Action</th>
+              <td mat-cell *matCellDef="let table; let i = index;">
+                <div fxLayout="row wrap" fxLayoutGap="8px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+                  <mat-icon matTooltip="Edit" (click)="updateincident(table)">edit</mat-icon>
+                  <mat-icon matTooltip="Delete" (click)="deleteincident(table.incident_id)">delete</mat-icon>
+                </div>
+              </td>
+            </ng-container>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+          </mat-paginator>
+
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
