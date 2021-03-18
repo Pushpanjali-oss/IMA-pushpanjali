@@ -43,7 +43,7 @@ export class incidentmainComponent extends NBaseComponent implements OnInit {
          this.neutrinosOAuthClientService.logout().then(logoutSuccess => {
             console.log("You have successfully logged out");
         }).catch(logoutError => {
-            console.log("There is some problem in logout");
+            console.log("Something went wrong to logout from this system");
         });
     }
 }

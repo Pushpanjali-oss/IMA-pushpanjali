@@ -179,7 +179,7 @@
                     },
                     {
                         "_key": "fabicon",
-                        "_value": "home",
+                        "_value": "list",
                         "_type": "a",
                         "_attrDef": "p",
                         "_useAsLabel": true
