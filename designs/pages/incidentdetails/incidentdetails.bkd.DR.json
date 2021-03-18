@@ -561,7 +561,7 @@
                         },
                         {
                             "_key": "html",
-                            "_value": "<div class=\"searchBar\">\n    <input  matInput class=\"serchInput\" placeholder=\"Search\" [(ngModel)]=\"searchValue\" (keyup)= \"filterIncident()\">\n</div>\n  \n\n",
+                            "_value": "<div class=\"searchBar\">\n    <input  matInput class=\"serchInput\" placeholder=\"Search\" [(ngModel)]=\"searchValue\" (keyup)= \"filterIncident()\">\n    <mat-icon matSuffix >search</mat-icon>\n</div>\n  \n\n",
                             "_type": "a",
                             "_attrDef": "p"
                         }
