@@ -354,6 +354,12 @@
                     "_value": "false",
                     "_type": "kv",
                     "_attrDef": "p"
+                },
+                {
+                    "_key": "*ngIf",
+                    "_value": "isAdminUser",
+                    "_type": "kv",
+                    "_attrDef": "c"
                 }
             ],
             "173d944c-3336-b535-0868-41f74da211d9": {
@@ -569,6 +575,160 @@
                 }
             }
         },
+        "f1611d29-2ecf-3f29-8698-323924a2e6da": {
+            "paletteKey": "FlexLayoutRow",
+            "parentEditorKey": "aa134238-88a9-85c6-106f-4119ecc37d72",
+            "isCommented": "false",
+            "designerReference": [
+                {
+                    "_key": "componentLabel",
+                    "_value": "Row",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "style",
+                    "_value": "width:100%",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "fxFlex",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "fxLayoutGap",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "wrap",
+                    "_value": "wrap",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "layoutAlign",
+                    "_value": "center",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "pLayoutAlign",
+                    "_value": "center",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[fxShow]",
+                    "_value": "true",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[fxHide]",
+                    "_value": "false",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "*ngIf",
+                    "_value": "!isAdminUser",
+                    "_type": "kv",
+                    "_attrDef": "c"
+                }
+            ],
+            "96ae9849-d88b-c080-3e57-df98f2c98818": {
+                "paletteKey": "NG-image",
+                "parentEditorKey": "f1611d29-2ecf-3f29-8698-323924a2e6da",
+                "isCommented": "false",
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Image",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "imgSrc",
+                        "_value": "Web/Icons/access_denied.png",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "alt",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[src]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "imgSecure",
+                        "_value": "",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[collectionName]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[imageFilter]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "width",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "srcset",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "sizes",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ]
+            }
+        },
         "7e3bbf77-8456-c6ea-34dc-bd0fa42f260c": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "aa134238-88a9-85c6-106f-4119ecc37d72",
@@ -633,6 +793,12 @@
                     "_value": "false",
                     "_type": "kv",
                     "_attrDef": "p"
+                },
+                {
+                    "_key": "*ngIf",
+                    "_value": "isAdminUser",
+                    "_type": "kv",
+                    "_attrDef": "c"
                 }
             ],
             "7add0c9b-c690-0e40-bbcc-9ca13b6e71af": {

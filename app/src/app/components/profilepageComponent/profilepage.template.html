@@ -1,6 +1,11 @@
-<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
-  <bh-incidentmain></bh-incidentmain>
-  <mat-card style="height:">
+<div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+  <mat-toolbar color="accent">Incident Details<div fxLayout="row wrap" fxFlex="1 1 auto;" fxLayoutGap="8px" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><button mat-fab color="primary" (click)="homeClick()">
+        <mat-icon>home</mat-icon>
+      </button><button mat-fab color="primary" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+      </button></div>
+  </mat-toolbar>
+  <mat-card style="padding:20px;">
     <mat-card-content>
       <div fxLayout="row wrap" fxLayoutGap="120px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
         <div fxLayout="column wrap" fxLayoutGap="30px" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Icons/profile.jpg" style="margin-left: 86px;" width="200px"></div>

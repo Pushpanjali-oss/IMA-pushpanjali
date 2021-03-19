@@ -41,13 +41,13 @@
             },
             {
                 "_key": "layoutAlign",
-                "_value": "start",
+                "_value": "center",
                 "_type": "a",
                 "_attrDef": "p"
             },
             {
                 "_key": "pLayoutAlign",
-                "_value": "stretch",
+                "_value": "center",
                 "_type": "a",
                 "_attrDef": "p"
             },
@@ -64,13 +64,13 @@
                 "_attrDef": "p"
             }
         ],
-        "c1313a3e-4b5c-9abc-92a3-8f1990d0a509": {
-            "paletteKey": "NEUTRINOS_VIEW_incidentmain",
+        "9da4ef00-a725-a097-5cc1-402d1c4d64fa": {
+            "paletteKey": "NG-Toolbar",
             "parentEditorKey": "4c7be918-3170-a864-69b6-930f37288cf7",
             "designerReference": [
                 {
                     "_key": "componentLabel",
-                    "_value": "incidentmain",
+                    "_value": "Toolbar",
                     "_type": "kv",
                     "_attrDef": "p",
                     "_useAsLabel": true
@@ -83,11 +83,212 @@
                 },
                 {
                     "_key": "class",
-                    "_value": "",
+                    "_value": [],
                     "_type": "dav",
                     "_attrDef": "p"
+                },
+                {
+                    "_key": "color",
+                    "_value": "accent",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "content",
+                    "_value": "Incident Details",
+                    "_type": "a",
+                    "_attrDef": "p"
                 }
-            ]
+            ],
+            "b43cd2c2-1f60-ab02-7552-dc5c32e0f76b": {
+                "paletteKey": "FlexLayoutRow",
+                "parentEditorKey": "9da4ef00-a725-a097-5cc1-402d1c4d64fa",
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "Row",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxFlex",
+                        "_value": "1 1 auto;",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fxLayoutGap",
+                        "_value": "8px",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "wrap",
+                        "_value": "wrap",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "layoutAlign",
+                        "_value": "end",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "pLayoutAlign",
+                        "_value": "stretch",
+                        "_type": "a",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxShow]",
+                        "_value": "true",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[fxHide]",
+                        "_value": "false",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ],
+                "f16bf9b3-cb55-443c-42bd-eac68ee243da": {
+                    "paletteKey": "NG-FabButton",
+                    "parentEditorKey": "b43cd2c2-1f60-ab02-7552-dc5c32e0f76b",
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fabicon",
+                            "_value": "home",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "primary",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "homeClick()",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disableRipple]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ]
+                },
+                "5fb111cd-316e-9e20-5684-235533668746": {
+                    "paletteKey": "NG-FabButton",
+                    "parentEditorKey": "b43cd2c2-1f60-ab02-7552-dc5c32e0f76b",
+                    "designerReference": [
+                        {
+                            "_key": "style",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "class",
+                            "_value": "",
+                            "_type": "dav",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "fabicon",
+                            "_value": "logout",
+                            "_type": "a",
+                            "_attrDef": "p",
+                            "_useAsLabel": true
+                        },
+                        {
+                            "_key": "color",
+                            "_value": "primary",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(click)",
+                            "_value": "logout()",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disabled]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "[disableRipple]",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "type",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "",
+                            "_type": "kv",
+                            "_attrDef": "p"
+                        }
+                    ]
+                }
+            }
         },
         "19f5d402-d9c3-1599-34be-bfc65d2ee140": {
             "paletteKey": "ad-card",
@@ -103,7 +304,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "height:",
+                    "_value": "padding:20px;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },

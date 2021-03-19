@@ -288,6 +288,67 @@
                         "_attrDef": "p"
                     }
                 ]
+            },
+            "19945845-77d3-2764-674c-26b576fa216a": {
+                "paletteKey": "NG-FabButton",
+                "parentEditorKey": "1f71a321-0fb1-ed36-5262-23d9b0b6dff3",
+                "designerReference": [
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "fabicon",
+                        "_value": "account_circle",
+                        "_type": "a",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "color",
+                        "_value": "primary",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "(click)",
+                        "_value": "homeClick()",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[disabled]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "[disableRipple]",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "type",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "routerLink",
+                        "_value": "/profile",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    }
+                ]
             }
         }
     },
@@ -501,7 +562,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "",
+                            "_value": "height:500px; width:350px;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -513,7 +574,7 @@
                         },
                         {
                             "_key": "imgSrc",
-                            "_value": "Web/Icons/welcome.jpg",
+                            "_value": "",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
@@ -525,7 +586,7 @@
                         },
                         {
                             "_key": "[src]",
-                            "_value": "",
+                            "_value": "['https://media.giphy.com/media/9XWiU6DWOS5KVnzvdM/giphy.gif']",
                             "_type": "kv",
                             "_attrDef": "p"
                         },
