@@ -213,7 +213,6 @@
                     "42b20022-665e-6234-11f3-597c2a54cec3": {
                         "paletteKey": "FlexLayoutCol",
                         "parentEditorKey": "75421290-c1f5-cd23-fff9-494c53efda6b",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -318,7 +317,6 @@
                         "43d79fff-dd40-873c-3f88-f823398989e7": {
                             "paletteKey": "NG-image",
                             "parentEditorKey": "42b20022-665e-6234-11f3-597c2a54cec3",
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "componentLabel",
@@ -399,7 +397,6 @@
                     "8511f1d6-ba32-58c8-3bb0-577601bda273": {
                         "paletteKey": "FlexLayoutCol",
                         "parentEditorKey": "75421290-c1f5-cd23-fff9-494c53efda6b",
-                        "isCommented": "false",
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
@@ -467,7 +464,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "8511f1d6-ba32-58c8-3bb0-577601bda273",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -654,7 +650,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "6e9ec136-6bc1-98c7-d4fb-9760c0e4ba54",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -681,7 +676,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "8511f1d6-ba32-58c8-3bb0-577601bda273",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -868,7 +862,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "6415ce06-8a13-4821-c866-6d826d246769",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -895,7 +888,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "8511f1d6-ba32-58c8-3bb0-577601bda273",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1082,7 +1074,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "d7230249-4806-caeb-e6d4-d2445d54d5d3",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",
@@ -1109,7 +1100,6 @@
                             "paletteKey": "Html5",
                             "parentEditorKey": "8511f1d6-ba32-58c8-3bb0-577601bda273",
                             "isAdvancedComponent": true,
-                            "isCommented": "false",
                             "designerReference": [
                                 {
                                     "_key": "style",
@@ -1296,7 +1286,6 @@
                                 "paletteKey": "html-editor",
                                 "parentEditorKey": "e944475c-cd62-2a13-b7b6-b879a4e9d01a",
                                 "isAdvancedChildComponent": true,
-                                "isCommented": "false",
                                 "designerReference": [
                                     {
                                         "_key": "style",

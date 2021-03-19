@@ -37,6 +37,6 @@ name:any;
     }
 
     ngOnInit() {
-
+console.log("in ");
     }
 }
