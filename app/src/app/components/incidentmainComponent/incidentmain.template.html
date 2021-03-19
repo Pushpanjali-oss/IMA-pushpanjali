@@ -4,11 +4,13 @@
       <mat-icon>list</mat-icon>
     </button><button mat-fab color="primary" (click)="logout()">
       <mat-icon>logout</mat-icon>
+    </button><button mat-fab color="primary" routerLink="/profile" (click)="homeClick()">
+      <mat-icon>account_circle</mat-icon>
     </button></div>
 </mat-toolbar>
 <div fxLayout="row wrap" style="width:100%;margin-top:50px;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
   <div fxLayout="column wrap" style="width:100%;" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
-    <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img imgSrc="Web/Icons/welcome.jpg"></div>
+    <div fxLayout="row wrap" style="width:100%" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false"><img [src]="[&apos;https://media.giphy.com/media/9XWiU6DWOS5KVnzvdM/giphy.gif&apos;]" style="height:500px; width:350px;"></div>
     <div class="wlcomeMessage">
       Hello {{this.loginUser}} , Welcome to IMS.</div>
   </div>

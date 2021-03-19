@@ -31,6 +31,7 @@ export class incidentdetailsComponent extends NBaseComponent implements OnInit {
     searchValue= "";
     imagesource:any;
     teamSearchValue:boolean=true;
+    isAdminUser:boolean= false;
     // incidentData = new MatTableDataSource([
     //     {"id": "1", "subject": "Incident 1", "description": "Incident description 1", "priority": 1, "incidentdate": "03-09-21"},
     //     {"id": "2", "subject": "Incident 2", "description": "Incident description 2", "priority": 1, "incidentdate": "03-10-21"},
@@ -100,6 +101,7 @@ export class incidentdetailsComponent extends NBaseComponent implements OnInit {
         if (this.neutrinosOAuthClientService.userInfo.teams.length > 0) {
             this.neutrinosOAuthClientService.userInfo.teams.forEach(elem => {
                 if (elem.displayName === 'ima-admins') {
+                    this.isAdminUser = false;
                     // console.log("in admin")
                     this.getAllIncidentData()
                 } else if (elem.displayName === 'ima-users') {

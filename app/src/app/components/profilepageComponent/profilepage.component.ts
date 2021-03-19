@@ -2,6 +2,7 @@
 import { Component, OnInit } from '@angular/core'
 import { NBaseComponent } from '../../../../../app/baseClasses/nBase.component';
 import { NeutrinosOAuthClientService } from 'neutrinos-oauth-client';
+import { Router } from '@angular/router';
 /*
 Client Service import Example:
 import { servicename } from 'app/sd-services/servicename';
@@ -22,7 +23,7 @@ userInfo:any;
 username:any;
 role:any;
 name:any;
-    constructor(public ser:NeutrinosOAuthClientService) {
+    constructor(public ser:NeutrinosOAuthClientService,private router: Router) {
         super();
          this.userInfo = this.ser.userInfo;
          console.log("userdetail",this.userInfo);
@@ -39,4 +40,8 @@ name:any;
     ngOnInit() {
 console.log("in ");
     }
+
+    homeClick = function () {
+        this.router.navigateByUrl('/incidentpage');
+    };
 }
