@@ -100,6 +100,7 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_OuJFv8EiVhAsk28P",
+        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "result"
@@ -112,6 +113,7 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
+        "paramMappingObj": {},
         "dbType": "postgres",
         "functionName": "sd_rietOzUNcG7GXgGh",
         "category": "Storage",
@@ -582,7 +584,6 @@
         "nodeType": "flow",
         "name": "",
         "databaseConfig": "sd_OuJFv8EiVhAsk28P",
-        "queryType": "",
         "resultMap": {
             "type": "bh.local",
             "value": "result"
@@ -595,7 +596,6 @@
         "inputs": 1,
         "outputs": 1,
         "params": [],
-        "paramMappingObj": {},
         "dbType": "postgres",
         "functionName": "sd_ZHhatl38RHDHe7ql",
         "category": "Storage",
