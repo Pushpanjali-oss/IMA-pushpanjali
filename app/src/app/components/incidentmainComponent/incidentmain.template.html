@@ -1,4 +1,4 @@
-<mat-toolbar color="accent">Incident Details<div fxLayout="row wrap" fxFlex="1 1 auto;" fxLayoutGap="8px" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><button mat-fab color="primary" (click)="openDialog()">
+<mat-toolbar color="accent">Incident Details<div fxLayout="row wrap" fxFlex="1 1 auto;" fxLayoutGap="8px" fxLayoutAlign="end stretch" [fxShow]="true" [fxHide]="false"><button mat-button color="primary" [matMenuTriggerFor]="menu">Menu list</button><button mat-fab color="primary" (click)="openDialog()">
       <mat-icon>add</mat-icon>
     </button><button mat-fab color="primary" *ngIf="isAdminUser" (click)="listClick()">
       <mat-icon>list</mat-icon>
